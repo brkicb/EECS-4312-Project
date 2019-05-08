@@ -1,1 +1,1 @@
-# EECS-4312-Project
+This is a project in EECS 4312 where a specification for an explosive store needed to be made using TLA. There were a variety of tasks that needed to be performed by the explosive store, and we had to create a proper specification for this. After the specification was made in TLA, we then had to create a program for the explosive store that would meet the specification, and for creating the program I used the Eiffel Programming Language.
