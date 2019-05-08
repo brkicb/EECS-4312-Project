@@ -1,0 +1,42 @@
+-- USE CASE FOR REMOVING EXPLOSIVES FROM THE STORE
+-- check to see what happens when you try to remove an explosive before creating the store
+remove("A")
+remove("A1A")
+remove("A1")
+put("A1",[1,1],[0,0])
+remove("A1")
+new_store(4,6)
+put("A1",[3,1],[1,1])
+-- error for ID not present in store
+remove("A2")
+-- error for ID not being 2 chars in length
+remove("A")
+remove("A1A")
+put("A2",[2,2],[2,2])
+put("A3",[1,4],[1,2])
+put("A4",[2,1],[2,4])
+put("A5",[2,1],[2,5])
+put("A6",[4,1],[0,0])
+put("A7",[1,2],[0,4])
+put("A8",[1,2],[0,1])
+put("A9",[1,1],[0,3])
+-- testing removing the explosives
+remove("A3")
+remove("A1")
+remove("A9")
+-- error for ID not being 2 chars in length
+remove("A9A")
+remove("A")
+-- testing removing the rest
+remove("A6")
+remove("A5")
+-- error for ID not present in store
+remove("A5")
+-- testing removing the rest
+remove("A2")
+remove("A8")
+remove("A7")
+remove("A4")
+-- error for ID not present in store
+remove("A4")
+

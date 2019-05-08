@@ -1,0 +1,81 @@
+-- USE CASE FOR PUTTING EXPLOSIVE IN THE STORE
+-- check to see what happens when you try to put an explosive before creating the store
+put("E1",[0,1],[0,0])-- check to see what happens when you try to put an explosive before creating the store
+put("F1",[1,0],[0,0])
+put("G1",[0,0],[0,0])
+put("C1",[1,1],[0,0])
+put("C1",[1,1],[0,0])
+new_store(4,6)
+-- test error handling for ID not being 2 characters
+put("A",[1,1],[1,1])
+put("A1A",[1,1],[1,1])
+-- test error handling for length being 0
+put("A1",[0,1],[1,1])
+put("A1",[1,0],[1,1])
+put("A1",[0,0],[1,1])
+-- test error handling for ID already being present in store
+put("A1",[2,2],[0,0])
+put("A1",[1,1],[0,4])
+-- test error handling for explosive being out of the bounds of the store
+put("A2",[1,1],[4,0])
+put("A2",[1,1],[0,6])
+put("A2",[1,3],[3,4])
+put("A2",[3,1],[2,3])
+-- test error handling for overlap between explosives
+put("A3",[2,2],[1,1])
+put("A3",[2,1],[2,3])
+put("A4",[1,2],[2,2])
+put("A4",[2,1],[1,3])
+-- test order of errors
+-- error for ID already in store vs length of explosives being 0
+put("A3",[0,1],[2,1])
+put("A3",[1,0],[2,1])
+put("A3",[0,0],[2,1])
+-- error for ID already in store vs explosive out of bounds
+put("A3",[1,1],[4,0])
+put("A3",[1,1],[0,6])
+put("A3",[1,2],[0,5])
+put("A3",[2,1],[3,0])
+-- error for ID already in store vs explosives overlapping
+put("A3",[1,1],[1,1])
+put("A1",[1,2],[2,2])
+put("A1",[2,1],[1,3])
+-- error for ID not being 2 chars vs length of explosives being 0
+put("A",[0,1],[2,1])
+put("A3A",[0,1],[2,1])
+put("A",[1,0],[2,1])
+put("A3A",[1,0],[2,1])
+put("A",[0,0],[2,1])
+put("A3A",[0,0],[2,1])
+-- error for ID not being 2 chars vs explosive out of bounds
+put("A",[1,1],[4,0])
+put("A3A",[1,1],[4,0])
+put("A",[1,1],[0,6])
+put("A3A",[1,1],[0,6])
+put("A",[1,2],[0,5])
+put("A3A",[1,2],[0,5])
+put("A",[2,1],[3,0])
+put("A3A",[2,1],[3,0])
+-- error for ID not being 2 chars vs explosives overlapping
+put("A",[1,1],[1,1])
+put("A3A",[1,1],[1,1])
+put("A",[1,2],[2,2])
+put("A1A",[1,2],[2,2])
+put("A",[2,1],[1,3])
+put("A1A",[2,1],[1,3])
+-- error for explosive out of bounds vs explosives overlapping
+put("A4",[2,2],[3,2])
+put("A4",[2,2],[3,3])
+put("A4",[1,4],[3,3])
+-- error for ID already in store vs explosives out of bounds vs explosives overlapping
+put("A1",[2,2],[3,2])
+put("A1",[2,2],[3,3])
+put("A1",[1,4],[3,3])
+-- error for ID not being 2 chars vs explosives out of bounds vs explosives overlapping
+put("A",[2,2],[3,2])
+put("A",[2,2],[3,3])
+put("A",[1,4],[3,3])
+put("A3A",[2,2],[3,2])
+put("A3A",[2,2],[3,3])
+put("A3A",[1,4],[3,3])
+

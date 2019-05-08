@@ -1,0 +1,47 @@
+-- USE CASE FOR SUGGESTING POSITIONS
+-- check to see what happens when you try to suggest a position before creating the store
+suggest([0,1])
+suggest([1,0])
+suggest([0,0])
+suggest([2,2])
+put("A1",[1,1],[0,0])
+suggest([0,1])
+suggest([1,0])
+suggest([0,0])
+suggest([2,2])
+new_store(4,6)
+-- put some explosives in the store
+put("A1",[3,1],[1,1])
+put("A2",[1,4],[1,2])
+put("A3",[2,1],[2,4])
+-- test errors with suggest
+-- test suggesting positions with length 0
+suggest([0,1])
+suggest([1,0])
+suggest([0,0])
+-- test suggesting positions with lengths larger than the store size
+suggest([8,1])
+suggest([1,8])
+suggest([9,9])
+-- test using the suggest command
+suggest([1,1])
+suggest([2,1])
+suggest([2,2])
+suggest([3,1])
+suggest([4,1])
+suggest([1,2])
+suggest([1,3])
+suggest([1,4])
+suggest([1,5])
+suggest([1,6])
+-- test suggesting with store that has units for positions larger than 2 chars
+new_store(12,14)
+put("A1",[5,6],[5,4])
+put("A2",[4,3],[1,7])
+put("A3",[3,2],[1,1])
+suggest([1,1])
+suggest([2,2])
+suggest([3,3])
+suggest([4,3])
+suggest([4,4])
+

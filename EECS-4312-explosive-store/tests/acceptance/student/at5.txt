@@ -1,0 +1,32 @@
+-- USE CASE FOR CHECKING FOR EXPLOSIVES LARGER THAN A SPECIFIED SIZE
+-- testing error of using large_explosives before store is created
+large_explosives(0,1)
+large_explosives(1,0)
+large_explosives(0,0)
+large_explosives(1,1)
+put("A1",[2,2],[0,0])
+large_explosives(0,1)
+large_explosives(1,0)
+large_explosives(0,0)
+large_explosives(1,1)
+new_store(6,8)
+put("A1",[4,4],[2,0])
+put("A2",[2,4],[0,2])
+put("A3",[3,2],[2,4])
+put("A4",[2,2],[0,0])
+put("A5",[5,2],[0,6])
+-- test errors with large_explosives
+large_explosives(0,1)
+large_explosives(1,0)
+large_explosives(0,0)
+-- test using large_explosives
+large_explosives(1,1)
+large_explosives(5,2)
+large_explosives(3,3)
+large_explosives(4,4)
+large_explosives(1,4)
+large_explosives(3,2)
+large_explosives(5,5)
+-- test what happens when length of dimensions being checked is larger than store dimentions
+large_explosives(12,12)
+
